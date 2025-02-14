@@ -1,0 +1,26 @@
+{
+  "name": "anon-chat",
+  "version": "1.0.0",
+  "description": "minos moins",
+  "main": "svr/index.js",
+  "scripts": {
+    "test": "node svr/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mhgits/anon-chat.git"
+  },
+  "keywords": [
+    "anonymous",
+    "chat"
+  ],
+  "author": "mhgits",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mhgits/anon-chat/issues"
+  },
+  "homepage": "https://github.com/mhgits/anon-chat#readme",
+  "dependencies": {
+    "ws": "^8.18.0"
+  }
+}
