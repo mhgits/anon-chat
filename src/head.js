@@ -3,10 +3,10 @@ window.addEventListener('DOMContentLoaded', init);
 
 let ws = null;
 let retries = 0;
-let conn = false;
+let conn = null;
 
-function send(type, data) {
-  console.log('> ' + type, data);
+function send(type, data="") {
+  console.log('> ' + type + ':', data);
   if (ws && ws.readyState == ws.OPEN) {
     ws.send(type + ',' + JSON.stringify(data));
   }
@@ -17,16 +17,16 @@ function initWs() {
   ws.onopen = () => {
     retries = 0;
     console.log('connect');
+    if (conn === false)
+      alert('Reconnected to server.');
     conn = true;
   };
-  ws.onmessage = x => {
-    let y = x.data.split(',');
-    y[1] = JSON.parse(y[1]);
-    console.log('> ' + y[0], y[1]);
-    message(...y);
-  };
-  ws.onerror = x => {
-    console.error(x);
+  ws.onmessage = msg => {
+    let y = msg.data.split(',');
+    let x = y.shift();
+    y = JSON.parse(y.join(','));
+    console.log('< ' + x + ':', y);
+    message(x, y);
   };
   ws.onclose = () => {
     setTimeout(() => {

@@ -1,1 +1,1 @@
-const api = 'ws://localhost:5555/';
+const api = "wss://acapi.evrtdg.com";
