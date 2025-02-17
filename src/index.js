@@ -1,5 +1,7 @@
 function init() {
-  $('.h-skip').onclick = () => switchUser(false);
+  $('#h-skip').onclick = () => switchUser(false);
+
+  initWs();
 }
 
 function switchUser(from) {
