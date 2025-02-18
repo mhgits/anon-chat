@@ -1,9 +1,14 @@
+/* * {
+  box-sizing: border-box;
+} */
+
 body {
   margin: 0px;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+  font-family: 'Google Sans';
   color: white;
   background: black;
-  font-size: 20px;
+  font-size: 22px;
 }
 
 #header {
@@ -42,5 +47,31 @@ h2 {
   padding: 5px;
 }
 
-/* #content {
-} */
+#content {
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  padding: 8px;
+  height: calc(100vh - 65px);
+  width: calc(100vw - 0px)
+}
+
+#msgs {
+  width: 100%;
+  height: calc(100% - 33px);
+  overflow-wrap: anywhere;
+  word-break: break-all;
+  padding-bottom: 8px;
+}
+
+#msgin {
+  width: calc(100% - 9px);
+  height: 20px;
+  background: black;
+  border: 2px solid white;
+  outline: none;
+  color: white;
+  padding: 5px;
+  font-family: inherit;
+  font-size: 18px;
+}

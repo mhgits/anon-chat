@@ -16,7 +16,7 @@ svr.on.connect = ws => {
 }
 
 svr.on.disconnect = ws => {
-	svr.send(ws, 'hi', { 'goober': true });
+  
 }
 
 function switchUser() {

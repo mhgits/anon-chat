@@ -52,7 +52,11 @@ process.on('unhandledRejection', x => console.error(x));
 
 module.exports = {
   wss,
-  cli: wss.clients,
   send,
-  on
+  on,
+	get cli() {
+		let x = [];
+		wss.clients.forEach(y => x.push(y));
+		return x;
+	}
 };
