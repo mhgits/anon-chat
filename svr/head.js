@@ -12,7 +12,7 @@ if (dev) {
 		req.addListener('end', () => {
 			if (req.url == '/env.js') {
 				res.writeHead(200, { 'Content-Type': 'application/javascript' });
-				res.end('const api = "ws://localhost:' + port + '";');
+				res.end('const api = "ws://' + process.env.URL + '";');
 			} else {
 				static.serve(req, res);
 			}
