@@ -4,6 +4,9 @@ const dev = process.env.DEV == 1;
 const port = process.env.PORT;
 let svr = null;
 let on = {};
+let token = {
+
+};
 
 if (dev) {
 	const static = new (require('node-static')).Server('./src');
@@ -12,7 +15,7 @@ if (dev) {
 		req.addListener('end', () => {
 			if (req.url == '/env.js') {
 				res.writeHead(200, { 'Content-Type': 'application/javascript' });
-				res.end('const api = "ws://' + process.env.URL + '";');
+				res.end('const api = "wss://' + process.env.URL + '";');
 			} else {
 				static.serve(req, res);
 			}
