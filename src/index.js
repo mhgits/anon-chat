@@ -20,7 +20,8 @@ function switchUser(from) {
 function message(type, data) {
   switch(type) {
     case 'un':
-      $('#h-user').innerText = un = data;
+      $('#h-user').innerText = un = data.un;
+      document.cookie = 'token=' + data.token + ';';
       break;
     case 'msg':
       createMessage(data.from, data.data);

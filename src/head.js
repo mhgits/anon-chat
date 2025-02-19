@@ -1,5 +1,6 @@
 const $ = (x, y = document) => y.querySelector(x);
 window.addEventListener('DOMContentLoaded', init);
+setInterval(send, 30e3, 'ping');
 
 let ws = null;
 let retries = 0;

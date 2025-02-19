@@ -12,11 +12,11 @@ svr.on.message = (ws, type, data) => {
 }
 
 svr.on.connect = ws => {
-	svr.send(ws, 'un', ws.id);
+	svr.send(ws, 'un', { un: ws.id, token: ws.token });
 }
 
 svr.on.disconnect = ws => {
-  
+
 }
 
 function switchUser() {
